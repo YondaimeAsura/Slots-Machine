@@ -1,0 +1,158 @@
+#Please keep in mind that i'm begginer in Python and this beautifull world of programming!
+
+
+import random
+import time
+import sys
+
+wallet = float(input("Enter money: "))
+
+start = ""
+bet = float(input("Enter your bet: "))
+gamble = ("Red","Black")
+win = 0
+
+while bet > wallet:
+    bet = int(input("Enter your bet: "))
+while start == "" :
+    start = input("\nPress enter \n").lower()
+    wallet = wallet - bet
+    print("wallet: " + str(wallet))
+    slots = ("7", ".", ",", "*", "#", "^")
+    x = random.choice(slots)
+    y = random.choice(slots)
+    z = random.choice(slots)
+    print(x, end=" ")
+    time.sleep(0.75)
+    print(y, end=" ")
+    time.sleep(0.75)
+    print(z, end=" ")
+    time.sleep(0.75)
+    if x == y and x == z and x == "7":
+        win = bet + bet
+        print("Jackpot!")
+        print("You won " + str(win))
+        rb = input("Gamble? (y/n): ").lower()
+        if rb == "y":
+            for i in range (1):
+                pc = random.choice(gamble)
+                player = input("(R)ed or (B)lack: ").lower()
+                print(pc)
+                if player == "r" and pc == "Red":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+                elif player  == "b" and pc == "Black":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+        else:
+            wallet = wallet + win
+            print("wallet: " + str(wallet))
+
+    elif x == y and x == z and x == ".":
+        win = ((15 / 100) * bet + bet)
+        print("You won " + str(win))
+        rb = input("Gamble? (y/n): ").lower()
+
+        if rb == "y":
+            for i in range (1):
+                pc = random.choice(gamble)
+                player = input("(R)ed or (B)lack: ").lower()
+                print(pc)
+                if player == "r" and pc == "Red":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+                elif player  == "b" and pc == "Black":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+        else:
+            wallet = wallet + win
+            print("wallet: " + str(wallet))
+
+    elif x == y and x == z and x == ",":
+        win = (20 / 100) * bet
+        print("You won  " + str(win))
+        rb = input("Gamble? (y/n): ").lower()
+        if rb == "y":
+            for i in range (1):
+                pc = random.choice(gamble)
+                player = input("(R)ed or (B)lack: ").lower()
+                print(pc)
+                if player == "r" and pc == "Red":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+                elif player  == "b" and pc == "Black":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+        else:
+            wallet = wallet + win
+            print("wallet: " + str(wallet))
+    elif x == y and x == z and x == "*":
+        win = (25 / 100) * bet
+        print('You won ' + str(win))
+        rb = input("Gamble? (y/n): ").lower()
+        if rb == "y":
+            for i in range (1):
+                pc = random.choice(gamble)
+                player = input("(R)ed or (B)lack: ").lower()
+                print(pc)
+                if player == "r" and pc == "Red":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+                elif player  == "b" and pc == "Black":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+        else:
+            wallet = wallet + win
+            print("wallet: " + str(wallet))
+
+    elif x == y and x == z and x == "#":
+        win = (50 / 100) * bet
+        print("You won " + str(win))
+        rb = input("Gamble? (y/n): ").lower()
+        if rb == "y":
+            for i in range (1):
+                pc = random.choice(gamble)
+                player = input("(R)ed or (B)lack: ").lower()
+                print(pc)
+                if player == "r" and pc == "Red":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+                elif player  == "b" and pc == "Black":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+        else:
+            wallet = wallet + win
+            print("wallet: " + str(wallet))
+
+    elif x == y and x == z and x == "^":
+        win = ((35 / 100) * bet + bet)
+        print("You won " + str(win))
+        rb = input("Gamble? (y/n): ").lower()
+        if rb == "y":
+            for i in range (1):
+                pc = random.choice(gamble)
+                player = input("(R)ed or (B)lack: ").lower()
+                print(pc)
+                if player == "r" and pc == "Red":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+                elif player  == "b" and pc == "Black":
+                    prize = win*2
+                    wallet = wallet + prize
+                    print("wallet: " + str(wallet))
+        else:
+            wallet = wallet + win
+            print("wallet: " + str(wallet))
+    if wallet == 0:
+        sys.exit()
